@@ -1,0 +1,62 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: Gotham Rounded;
+}
+body{
+  padding:0;
+  margin:0;
+}
+.index {
+  background-image: url("images/sky.gif");
+}
+.gameplay {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("images/boom.gif");
+  background-color: black;
+}
+
+.explosion {
+  background-image: url("images/boom.gif");
+}
+
+.container {
+  width: 800px;
+  max-width: 80%;
+  background-color: beige;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 2px;
+}
+
+.btn-grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn {
+  background-color: maroon;
+  border: 1px solid #500000;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: white;
+  outline: none;
+}
+
+.btn:hover {
+  border-color: black;
+}
+
+footer {
+  text-align: center;
+  padding: 1px;
+  background-image: url("images/eb3.gif");
+  display: block;
+}
