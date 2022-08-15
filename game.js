@@ -1,16 +1,22 @@
-const textElement = document.getElementById('text')
+ const textElement = document.getElementById('text')
+//const pictureElement = document.getElementById("picture")
 const optionButtonsElement = document.getElementById('option-buttons')
+const element = document.getElementById("bg")
 
 let state = {}
 
 function startGame() {
   state = {}
   showTextNode(1)
+
+
 }
 
 function showTextNode(textNodeIndex) {
   const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
   textElement.innerText = textNode.text
+  //pictureElement.src = textNode.picture
+  element.style.backgroundImage = textNode.bg
   while (optionButtonsElement.firstChild) {
     optionButtonsElement.removeChild(optionButtonsElement.firstChild)
   }
@@ -42,7 +48,7 @@ function selectOption(option) {
 const textNodes = [
   {
     id: 1,
-    picture:"images/boom.gif",
+    //picture:"images/boom.gif",
     text: 'You awaken with your entire body trapped under rubble. You are in darkness. With your hands, you can feel the rubble and dust of crumbled concrete surrounding you. Crushing each of your legs is two large blocks of concrete, not appearing to budge at all, and rendering your legs useless and immovable. You find it difficult to breathe, and when you do, you feel a sharp pain in your lungs.',
     options: [
       {
@@ -66,6 +72,8 @@ const textNodes = [
   },
   {
     id: 2,
+    //picture:"images/eb4.gif",
+    bg:"url('images/boom.gif')",
     text: 'You try to make the loudest sound you can, but your extreme dehydration means you can only let out a wheeze. It seems that trying to call for help is futile.',
     options: [
       {
@@ -81,6 +89,7 @@ const textNodes = [
   {
     id: 3,
     text: 'After an hour of excruciating pain, your legs are still completely trapped. Your clothes are torn and tattered, and your entire body is covered in cuts and bruises. You wipe blood from your eyes, as a large gash on your forehead drips blood down your face. By now, trapped under the rubble, you have accepted your fate, that you will die in that exact place. All that is left now is to wait for your organs to slowly fail.',
+    bg:"url('images/man_god.gif')",
     options: [
       {
         text: 'Give up and die',
@@ -94,6 +103,7 @@ const textNodes = [
   },
   {
     id: 4,
+    bg: "url('images/chickenegg.gif')",
     text: 'For the next six hours, pinned under crushing rubble, you slowly drift in and out of consciousness, beginning to succumb to thirst and your wounds. Just as you close your eyes, waiting for death, you hear a loud thump in the distance. Your eyes slowly peel open, and after a mere four seconds, you hear another thump. Your heart begins racing. After 30 long seconds of silence, the thumping begins again, however, this time it occurs at a much more rapid pace. It sounds similar to a horse’s gallop, although it violently shakes the entire ground. As the rumbling gets louder and louder, you wonder to yourself what terrifying creature could be causing this. Little did you know, that question would be answered, very soon…',
     options: [
       {
@@ -141,13 +151,18 @@ const textNodes = [
     text: "The man speaks. “Lemme tell ya, the other option would have been much easier for both of us, but whatever. Listen, getting all this rubble off you might prove to be a real pain in the ass.” He looks at the pile for 10 long seconds, and then says “alright”, and proceeds to begin jamming the bar under a large piece of concrete on top of you, then forcefully pressing down on the other end with his boot in order to gain leverage. With ease it rolls off the pile, leaving you with relief as your body feels lighter. After some time has passed, he finally levers the last chunk of concrete off your body. Finally able to move again, you try to stand up, but your legs collapse under you. “Here”, says the man, handing you the bar he was holding. “Use this.” Using it as an improvised walking stick, you stand up, weak and weary, but able to maintain your footing. “So”, says the man, “from that jumpsuit I can tell you were locked up in the hole too.” Looking at his attire, you see he is wearing the same uniform as you.",
     options: [
       {
-        text: 'Restart',
-        nextText: -1
-      }
+        text: '"What happened?"',
+        nextText: 9
+      },
+      {
+        text: '"Who are you?"',
+        nextText: 10
+      },
     ]
   },
   {
     id: 9,
+    bg: "url('images/fallouthead.png')",
     text: "“I was waiting for you to ask that. Well, if I’m being honest, I’m not even sure myself. But what <i>you</i> need to know, is that there are huge, tall, creatures walking the surface of the earth now. Came in a stampede and, as you know, completely destroyed the prison over there, that one you and I, were both locked up in… Slaughtered nearly everyone” You stare at him blankly. “Creatures… what do you m-” you begin to speak, but he cuts you off. “Listen, you won’t understand until you see one for yourself, and I’m pretty sure you got damn close earlier. Stabbed its legs right next to your face. You should be damn thankful you’re even alive right now. Now, before another one decides to show up and skewer both of us to death, let’s get the hell out of here.” This seems to leave you with more questions than answers, but his urgency leaves you no time to ask them.",
     options: [
       {
@@ -158,17 +173,19 @@ const textNodes = [
   },
   {
     id: 10,
+    bg: "url('images/fallouthead.png')",
     text: `“Who am I? Well, me, I’m just like you… locked up… 30 years… sentence was almost over, too”. Then, a stampede of… these things, they came and destroyed the whole place. Slaughtered near everyone in there. Well, I say near, because, there’s you and me, of course. Only survivors, from what I can see”. He gestures to the giant expanse of rubble which was once a giant prison, now crumbled and destroyed. “What things?” You ask. “Soon enough,” he mutters, “You’ll see. And I’m pretty sure you got damn close earlier. Stabbed its legs right next to your face. You should be damn thankful you’re even alive right now. Now, before another one decides to show up and skewer both of us to death, let’s get the hell out of here.” This seems to leave you with more questions than answers, but his urgency leaves you no time to ask them.`,
     options: [
       {
-        text: 'Restart',
-        nextText: -1
+        text: 'Continue',
+        nextText: 11
       }
     ]
   },
   {
     id: 11,
-    text: `“Alright, listen. We need to get out of here.” He says. Gesturing to the horizon he directs your gaze to a range of mountains. “That seems to be our best bet. And I know what you’re thinking, why not make our way back to civilization? But listen. That stampede? All headed down that road.” He looks toward a gravel road, which runs into the distance for about 20 km before connecting to a main road. “My guess is the towns will be teeming with those things. It seems that they want to kill us, so it makes sense that they’d head to the towns.” These vague details begin to make you incredibly frustrated. “What things?” You ask “What creat-” He interrupts. “LISTEN,” he yells. “I don't know. But I’ll tell you this. If you see a tall, spindly creature that looks similar to a crab, which has legs about 10 meters tall, hide. Don’t run. You can’t run. Hide. Apart from that, I’m just as clueless as you. Now, from here, we have two options.” He points to a tall mountain ahead. “We can head up to that peak,`,
+    bg:"url('images/wasteland.png')",
+    text: `“Alright, listen. We need to get out of here.” He says. Gesturing to the horizon he directs your gaze to a range of mountains. “We should head up there to get a view of the area. Supplies are sparse though. From what I've seen there’s not much we can salvage from the rubble here. It might be a good idea to head to the town so we can get some food and water and something to patch up your wounds. Be warned, though, any areas with high populations probably attract those things more. So, what’s it gonna be?”`,
     options: [
       {
         text: 'Congratulations. Play Again.',
@@ -179,6 +196,7 @@ const textNodes = [
   {
     id: 999,
     text: 'ᕕ( ᐛ )ᕗ',
+    bg: "url('images/garywhite.gif')",
     options: [
       {
         text: 'Congratulations. Play Again.',

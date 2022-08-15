@@ -17,8 +17,8 @@ body{
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-image: url("images/boom.gif");
   background-color: black;
+  /**background-image: url("path");**/
 }
 
 .explosion {
@@ -59,4 +59,12 @@ footer {
   padding: 1px;
   background-image: url("images/eb3.gif");
   display: block;
+}
+
+.wp {
+  background-image: url("images/whitepill.jpg")
+}
+
+.bp {
+  background-image: url("images/blackpill.jpg")
 }
