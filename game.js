@@ -188,11 +188,93 @@ const textNodes = [
     text: `“Alright, listen. We need to get out of here.” He says. Gesturing to the horizon he directs your gaze to a range of mountains. “We should head up there to get a view of the area. Supplies are sparse though. From what I've seen there’s not much we can salvage from the rubble here. It might be a good idea to head to the town so we can get some food and water and something to patch up your wounds. Be warned, though, any areas with high populations probably attract those things more. So, what’s it gonna be?”`,
     options: [
       {
-        text: 'Congratulations. Play Again.',
-        nextText: -1
+        text: 'Head to the nearest town',
+        nextText: 12
+      },
+      {
+        text: 'Head to higher ground',
+        nextText: 25
       }
     ]
   },
+    {
+      id: 12,
+      bg:"url('images/village.png')",
+      text: `You decide upon heading to the nearest town in order to gather food and medical supplies. You make your way down the dirt road for the first time since you arrived on the bus 5 years ago. Looking down the road, it cuts a straight line through the desert all the way to the horizon. The 20 minute drive to the nearest town is going to be much more difficult on foot, in the beating sun with no water, and with the threat of being attacked by an unknown creature looming. Nevertheless, you continue down the road for a few hours until you notice the dusty dirt road change to seal under your feet. Now, looking into the distance, you see waves of heat reflecting from the road, shimmering in the air and distorting it. By this point your thirst is devastating and you feel tempted to die. Will you?`,
+      options: [
+        {
+          text: 'Die of Thirst',
+          nextText: 13
+        },
+        {
+          text:'Persevere',
+          nextText: 14
+        }
+      ]
+    },
+      {
+        id: 13,
+        bg:"url('images/wasteland.png')",
+        text: `You lie on the floor and proceed to die of thirst. You should know that it was your apathetic personality that brought yourself to this point!`,
+        options: [
+          {
+            text: 'Restart?',
+            nextText: 1
+          }
+        ]
+      },
+        {
+          id: 14,
+          bg:"url('images/wasteland.png')",
+          text: `Out of sheer willpower you choose not to die. You use this willpower to drag your body down the road until you eventually reach a sign. “Sandville”, it reads, “Population: 1,200”. Looking past the sign, you see a cluster of buildings. “Will you look at that,” the man says. “not a single one of those creatures here. Curious.” You both take a second to scan the village ahead of you. “You know, I don’t see any people around either. You don’t say…” You both walk into the village, now on edge and alert. “Look,” you say, “a store. This is what we were looking for, right?” “Be very cautious”, the old man says to you. On the opposite side of the road is a sidestreet leading to a number of residential homes. Do you want to head to the store or search the homes?`,
+          options: [
+            {
+              text: 'Go into the store',
+              nextText: 15
+            },
+            {
+              text:'Go and search the houses',
+              nextText: 24
+            }
+          ]
+        },
+          {
+            id: 24,
+            bg:"url('images/village.png')",
+            text: `your LUCK skill is too low.`,
+            options: [
+              {
+                text: 'Restart',
+                nextText: 1
+              }
+            ]
+          },
+            {
+              id: 15,
+              bg:"url('images/village.png')",
+              text: `As you approach the glass front of the store you see a disturbing sight - but one that you were both expecting. Every shelf of the store is entirely empty, and all food and supplies have been picked to the bone. As you push open the door cautiously, you hear the “ding” of the bell. Blue liquid is seeping from the corner of the room, and you follow it with your eyes to the source - a fridge knocked over on its side, and what is either a coolant from the motor or simply a smashed soft drink is seeping from beneath it. You both scan the place with your eyes for 5 seconds, then simultaneously glance at each other. “Let’s check the back”, you say. “I was thinking the same…” says the man, and you both walk over to the door to the back of the store, stepping over broken glass and crushed produce. The door is ajar, which crushes any hopes that somehow, inexplicably, there would be untapped treasures of food and resources behind it.`,
+          options: [
+                {
+                  text: 'Go into the store',
+                  nextText: 15
+                },
+                {
+                  text:'Go and search the houses',
+                  nextText: 24,
+                }
+              ]
+            },
+            {
+              id: 25,
+              bg:"url('images/mountain.jpg')",
+              text: `your MOUNTAINEERING skill is too low.`,
+              options: [
+                {
+                  text: 'Restart',
+                  nextText: 1
+                }
+              ]
+            },
   {
     id: 999,
     text: 'ᕕ( ᐛ )ᕗ',
